@@ -11,6 +11,7 @@ import { testMode } from '../../utils/testMode';
 import { menu } from '../../mock/testData';
 import { getStore } from '../../apis/storeApi';
 import { getReview } from '../../apis/reviewApi';
+import { Helmet } from 'react-helmet-async';
 
 const Menu = () => {
 
@@ -52,6 +53,12 @@ const Menu = () => {
   if (menuList) {
     return (
       <>
+        <Helmet>
+          <meta property="og:site_name" content="FingerOrder" />
+          <meta property="og:title" content="1" />
+          <meta property="og:url" content="http://localhost:3000/menu/1/1" />
+          <meta property="og:description" content="1매장의 메뉴입니다" />
+        </Helmet>
         <div className={styled.menuContainer}>
           <h1 className={styled.mainTitle}>
             {params.storeName}
